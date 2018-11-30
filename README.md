@@ -18,7 +18,7 @@ The template consists of:
 ## Developed With
 
 * [Node.js 8.11](https://nodejs.org/en/) - Javascript runtime
-* [React 16.4](https://reactjs.org/) - A javascript library for building user interfaces
+* [React 16.6](https://reactjs.org/) - A javascript library for building user interfaces
 * [Babel 6.26](https://babeljs.io/) - A transpiler for javascript
 * [Webpack 4.x](https://webpack.js.org/) - A module bundler
 * [SCSS](http://sass-lang.com/) - A css metalanguage
