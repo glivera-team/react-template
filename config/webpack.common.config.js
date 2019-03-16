@@ -53,6 +53,10 @@ const config = {
 					}
 				}]
 			}
+			,{
+			        test: /\.(mp4|webm)$/,
+			        use: 'file-loader?name=videos/[name].[ext]',
+			}
 			,
 			{
 				test: /\.(png|cur|svg|jpg|gif)$/,
