@@ -15,7 +15,7 @@
     "serve:prod": "npm run build:prod && live-server ./public",
     "lint": "eslint .; exit 0",
     "lint:fix": "eslint . --fix; exit 0",
-    "start": "npm run serve:dev",
+    "start": "npm run build:prod",
     "test": "echo \"No tests available\"; exit 0"
   },
   "repository": {
@@ -69,7 +69,7 @@
     "uglifyjs-webpack-plugin": "^1.2.5",
     "url-loader": "^1.0.1",
     "webpack": "^4.9.1",
-    "webpack-bundle-analyzer": "^2.13.1",
+    "webpack-bundle-analyzer": ">=3.3.2",
     "webpack-cli": "^2.1.4",
     "webpack-dashboard": "^2.0.0",
     "webpack-dev-server": "^3.1.4",
