@@ -9,7 +9,7 @@ const config = {
 		main: ['./src/index.js']
 	},
 	output: {
-		filename: '[name].js',
+		filename: '[name]_[hash].js',
 		path: commonPaths.outputPath
 	},
 	module: {
@@ -53,13 +53,13 @@ const config = {
 					}
 				}]
 			}
-			,{
-			        test: /\.(mp4|webm)$/,
-			        use: 'file-loader?name=videos/[name].[ext]',
+			, {
+				test: /\.(mp4|webm)$/,
+				use: 'file-loader?name=videos/[name].[ext]',
 			}
 			,
 			{
-				test: /\.(png|cur|svg|jpg|gif)$/,
+				test: /\.(png|cur|svg|jpg|gif|webp|pdf)$/,
 				use: [
 					{
 						loader: 'file-loader',
@@ -85,13 +85,15 @@ const config = {
 	},
 	plugins: [
 		new webpack.ProgressPlugin(),
-		new ExtractTextPlugin('[name].css'),
+		new ExtractTextPlugin('[name]_[hash].css'),
 		new CleanPlugin(['../public'], {allowExternal: true}),
 		new HtmlPlugin({
+			'base': '/',
 			filename: 'index.html',
 			template: commonPaths.template,
 			favicon: commonPaths.favicon,
-			inject: true
+			inject: true,
+			hash: true
 		})
 	]
 };
