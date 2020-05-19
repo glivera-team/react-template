@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const CleanPlugin = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const commonPaths = require('./common-paths');
@@ -94,7 +95,15 @@ const config = {
 			favicon: commonPaths.favicon,
 			inject: true,
 			hash: true
-		})
+		}),
+		new CopyPlugin({
+			patterns: [
+				{
+					from: 'copy_to_prod',
+					to: commonPaths.outputPath,
+				}
+			],
+		}),
 	]
 };
 
